@@ -171,10 +171,12 @@ form>.right>input{
 form>.right>input:focus{
     border: 1px solid #6d6009;
 }
-
-input:valid{
-    border: 1px solid green;
+form>.left>input:focus{
+    border: 1px solid #6d6009;
 }
-input:invalid{
+form>.left>input:invalid{
+    border: 1px solid red;
+}
+form>.right>input:invalid{
     border: 1px solid red;
 }

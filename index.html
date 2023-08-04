@@ -39,7 +39,7 @@
                     <label>Password</label><br>
                     <input type="password" placeholder="Password"><br>
 
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" onclick="validate()">Sign Up</button>
 
                     
                 </div>
@@ -54,11 +54,9 @@
 
                     <label>Confirm Password</label><br>
                     <input type="password" placeholder="Re-Enter Password"><br>
+                    <div class="error-alert active"> *Passwords do not match</div>
 
                 </div>
-
-
-
             </form>
 
 
@@ -71,6 +69,20 @@
 
 
 
-    <script src="script.js"></script>
+    <script src="script.js">
+
+        function validate(){
+            var password = document.getElementById("password").value;
+            var cpassword = document.getElementById("cpassword").value;
+
+
+            if(password != cpassword){
+                alert("Password does not match");
+                
+
+
+            }
+        }
+    </script>
 </body>
 </html>

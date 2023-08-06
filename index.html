@@ -73,14 +73,18 @@
 
 const password = document.getElementById('password');
 const cpassword = document.getElementById('cpassword');
+const errorAlert = document.querySelector('.error-alert');
 
 
 //keyup option used to change the border color of the input field
 cpassword.addEventListener('keyup', function() {
     if (password.value === cpassword.value) {
         cpassword.style.border = '2px solid green';
+        errorAlert.classList.remove('active');
     } else {    
         cpassword.style.border = '2px solid red';
+        errorAlert.classList.add('active');
+
     }
 });
 

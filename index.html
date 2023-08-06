@@ -37,9 +37,9 @@
                     <input type="email" placeholder="Email Address"><br>
                     
                     <label>Password</label><br>
-                    <input type="password" placeholder="Password"><br>
+                    <input type="password" placeholder="Password" id="password"><br>
 
-                    <button type="submit" onclick="validate()">Sign Up</button>
+                    <button type="submit">Sign Up</button>
 
                     
                 </div>
@@ -53,7 +53,7 @@
                     <input type="phone" placeholder="Phone Number"><br>
 
                     <label>Confirm Password</label><br>
-                    <input type="password" placeholder="Re-Enter Password"><br>
+                    <input type="password" placeholder="Re-Enter Password" id="cpassword"><br>
                     <div class="error-alert active"> *Passwords do not match</div>
 
                 </div>
@@ -69,20 +69,21 @@
 
 
 
-    <script src="script.js">
+    <script>
 
-        function validate(){
-            var password = document.getElementById("password").value;
-            var cpassword = document.getElementById("cpassword").value;
-
-
-            if(password != cpassword){
-                alert("Password does not match");
-                
+const password = document.getElementById('password');
+const cpassword = document.getElementById('cpassword');
 
 
-            }
-        }
+//keyup option used to change the border color of the input field
+cpassword.addEventListener('keyup', function() {
+    if (password.value === cpassword.value) {
+        cpassword.style.border = '2px solid green';
+    } else {    
+        cpassword.style.border = '2px solid red';
+    }
+});
+
     </script>
 </body>
 </html>
